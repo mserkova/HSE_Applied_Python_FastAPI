@@ -16,20 +16,35 @@ API предоставляет функционал для:
 ## 💡 Структура проекта
 
 fastapi/
+
 ├── app/
+
 │   ├── __init__.py
+
 │   ├── config.py           # Настройки приложения
+
 │   ├── database.py         # Подключение к БД
+
 │   ├── main.py             # Точка входа, эндпоинты
+
 │   ├── models.py           # SQLAlchemy модели
+
 │   ├── schemas.py          # Pydantic схемы
+
 │   ├── redis.py            # Redis
+
 │   └── utils.py            # Вспомогательные функции
+
 ├── .env.example            # Шаблон переменных окружения
+
 ├── .gitignore
+
 ├── docker-compose.yml      # Docker Compose конфигурация
+
 ├── Dockerfile
+
 ├── requirements.txt        # Зависимости
+
 └── README.md
 Подробное описание каждого модуля и функций представлено в соответствующих файлах
 
