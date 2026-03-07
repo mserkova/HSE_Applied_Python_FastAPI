@@ -21,29 +21,29 @@ fastapi/
 
 │   ├── __init__.py
 
-│   ├── config.py           # Настройки приложения
+│   ├── config.py           >> Настройки приложения
 
-│   ├── database.py         # Подключение к БД
+│   ├── database.py         >> Подключение к БД
 
-│   ├── main.py             # Точка входа, эндпоинты
+│   ├── main.py             >> Точка входа, эндпоинты
 
-│   ├── models.py           # SQLAlchemy модели
+│   ├── models.py           >> Описание таблиц базы данных PostgreSQL
 
-│   ├── schemas.py          # Pydantic схемы
+│   ├── schemas.py          >> Pydantic схемы
 
-│   ├── redis.py            # Redis
+│   ├── redis.py            >> Redis
 
-│   └── utils.py            # Вспомогательные функции
+│   └── utils.py            >> Вспомогательные функции
 
-├── .env.example            # Шаблон переменных окружения
+├── .env.example            >> Шаблон переменных окружения
 
 ├── .gitignore
 
-├── docker-compose.yml      # Docker Compose конфигурация
+├── docker-compose.yml      >> Docker Compose конфигурация
 
 ├── Dockerfile
 
-├── requirements.txt        # Зависимости
+├── requirements.txt        >> Зависимости
 
 └── README.md
 
