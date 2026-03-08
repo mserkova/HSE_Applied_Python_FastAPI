@@ -1,6 +1,6 @@
-# API-сервис сокращения ссылок
+# API-сервис сокращения ссылок 
 
-Сервис для сокращения URL на FastAPI с кэшированием в Redis и хранением данных в PostgreSQL.
+Сервис для сокращения URL на FastAPI с кэшированием в Redis и хранением данных в PostgreSQL с последующим тестированием (Unit-тесты, функциональные тесты и нагрузочное тестирование)
 
 Развернутый сервис на Render: https://hse-applied-python-fastapi.onrender.com 
 
@@ -17,7 +17,7 @@ API предоставляет функционал для:
 
 fastapi/
 
-├── app/
+├── app/ (в рамках ДЗ №3)
 
 │   ├── __init__.py
 
@@ -44,6 +44,23 @@ fastapi/
 ├── Dockerfile
 
 ├── requirements.txt        >> Зависимости
+
+-------------------------------------------------------------------
+├── tests/ (в рамках ДЗ №4)
+
+│   ├── __init__.py
+
+│   ├── conftest.py         >> Тестовая БД
+
+│   ├── test_unit.py        >> Unit тесты
+
+│   ├── test_api.py         >> Функциональные тесты
+
+│   ├── test_load.py        >> Нагрузочное тестирование при помощи Locust
+
+│   ├── load_test_results.txt        >> Результаты Locust теста
+
+-------------------------------------------------------------------
 
 └── README.md
 
@@ -168,4 +185,19 @@ Response:
 }
 
 
+## 💡 Тестирование сервиса
+
+1. Покрытие кода: 91%
+2. Функциональные тесты: 22 passed, 1 skipped, 0 failed
+3. Нагрузочное тестирование осуществлено при помощи Locust
+
+Запуск:
+1. coverage run -m pytest tests/
+2. coverage html
+3. start htmlcov/index.html
+
+Нагрузочный тестирование
+locust -f tests/test_load.py --headless -u 10 -r 10 -t 1m --host=http://localhost:8000
+
+Результаты: tests/load_test_results.txt
 
