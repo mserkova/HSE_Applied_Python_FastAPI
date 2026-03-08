@@ -60,6 +60,17 @@ fastapi/
 
 │   ├── load_test_results.txt        >> Результаты Locust теста
 
+├── Coverage_report_classes.JPG      >> Скриншот отчета о покрытии (1/3)
+
+├── Coverage_report_files.JPG        >> Скриншот отчета о покрытии (2/3)
+
+├── Coverage_report_functions.JPG    >> Скриншот отчета о покрытии (3/3)
+
+├── htmlcov                          >> Отчет о покрытии
+
+├── .coveragerc                      >> Конфигурация для инструмента coverage
+
+├── Locust_result.txt                >> Отчет о нагрузочном тестировании
 -------------------------------------------------------------------
 
 └── README.md
@@ -192,12 +203,13 @@ Response:
 3. Нагрузочное тестирование осуществлено при помощи Locust
 
 Запуск:
-1. coverage run -m pytest tests/
-2. coverage html
-3. start htmlcov/index.html
+1. coverage run -m pytest tests/test_unit.py tests/test_api.py
+2. coverage report
+3. coverage html
+4. start htmlcov/index.html
 
 Нагрузочный тестирование
 locust -f tests/test_load.py --headless -u 10 -r 10 -t 1m --host=http://localhost:8000
 
-Результаты: tests/load_test_results.txt
+Результаты: tests/, htmlcov/, Coverage. JPG, Locust_result.txt
 
